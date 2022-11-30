@@ -1,0 +1,14 @@
+<div class="row justify-content-center" style="margin: auto 50px;">
+    <div class="col-md-10">
+        <!-- Waline -->
+        <div id="vcomments"></div>
+        <script>
+            Waline.init({
+                el: '#vcomments',
+                pageview: true,
+                serverURL: WalineServerURL,
+                requiredMeta: WalineRequiredMeta
+            })
+        </script>
+    </div>
+</div>

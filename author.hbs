@@ -1,24 +1,23 @@
 {{!< default}}
 
 <div class="author-page">
-	<header>
-		<div class="header-top">
-			{{navigation}}
-		</div>
-	</header>
+    <header class="animated fadeIn">
+        <div class="header-top">
+            {{navigation}}
+        </div>
+    </header>
 
-	<div class="author-container">
-		<div class="plane-wrapper">
-			<img src="{{asset 'images/plane.svg'}}" alt="">
-			<div class="rotate-container">
-				<img src="{{asset 'images/propeller.svg'}}" alt="">
-			</div>
-		</div>
-		<div class="about-me-content">
-			<h2>杰瑞米大魔王</h2>
-			<p>尽情设计自己的个人页面吧！</p>
-		</div>
-	</div>
+    <div class="author-container">
+        <div class="plane-wrapper">
+            <img src="{{asset 'images/plane.svg'}}" alt="">
+            <div class="rotate-container">
+                <img src="{{asset 'images/propeller.svg'}}" alt="">
+            </div>
+        </div>
+        <div class="about-me-content">
+            {{> custom/about-content}}
+        </div>
+    </div>
 </div>
 
 

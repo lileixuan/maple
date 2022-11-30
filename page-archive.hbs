@@ -1,38 +1,38 @@
 {{!< default}}
 <header {{#if @site.cover_image}}style="background-image: url({{@site.cover_image}})" {{/if}} class="tag-header">
-  <div class="tag-header-container">
-    <div class="tag-nav">
-      <a href="{{@site.url}}">首页</a>
+    <div class="tag-header-container">
+        <div class="tag-nav">
+            <a href="{{@site.url}}">首页</a>
+        </div>
+        <div class="tag-content">
+            <h1 class="tag-title">文章归档</h1>
+        </div>
     </div>
-    <div class="tag-content">
-      <h1 class="tag-title">文章归档</h1>
-    </div>
-  </div>
 </header>
 <div class="site-content">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6 archive-posts">
-        {{#get "posts" limit="all" order="published_at desc"}}
-        {{#foreach posts}}
-        <div class="post post-date-{{date format="YYYY"}}">
-          <div class="post-label">
-            <i class="fa fa-calendar"></i>
-            <span>{{date format="YYYY"}}</span>
-          </div>
-          <a class="post-link" href="{{url}}">
-            <span class="post-title"> {{title}}</span>
-            <div class="post-date">
-              <i class="fa fa-clock-o"></i>
-              <span>{{date format="YYYY/MM/DD"}}</span>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 archive-posts">
+                {{#get "posts" limit="all" order="published_at desc"}}
+                    {{#foreach posts}}
+                        <div class="post post-date-{{date format="YYYY"}}">
+                            <div class="post-label">
+                                <i class="fa fa-calendar"></i>
+                                <span>{{date format="YYYY"}}</span>
+                            </div>
+                            <a class="post-link" href="{{url}}">
+                                <span class="post-title"> {{title}}</span>
+                                <div class="post-date">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>{{date format="YYYY/MM/DD"}}</span>
+                                </div>
+                            </a>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
             </div>
-          </a>
         </div>
-        {{/foreach}}
-        {{/get}}
-      </div>
     </div>
-  </div>
 </div>
 {{> footer this}}
 {{> copyright this}}

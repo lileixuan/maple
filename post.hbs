@@ -1,60 +1,69 @@
 {{!< default}}
 {{#post}}
-	{{!-- <header style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{@site.cover_image}}{{/if}})" --}}
-	<header style="background-image: url({{#if primary_tag.feature_image}}{{primary_tag.feature_image}}{{else}}{{@site.cover_image}}{{/if}})" 
-		
-	        class="post-header">
-		<div class="post-header-container">
-			<div class="post-nav">
-				<a href="{{@site.url}}">首页</a>
-			</div>
-			<div class="post-tags">{{tags separator=""}}</div>
-		</div>
-	</header>
-	<div class="site-content">
-		<div class="article-wrapper">
-			<div class="article-left">
-				<div class="article-content">
-					<div class="post-title">{{title}}</div>
-					<div class="post-author">
-						<div class="author-avatar">
-							<img src="{{img_url primary_author.profile_image}}" alt="">
-						</div>
-						<div class="author-content">
-							<div class="author-name">{{primary_author.name}}</div>
-							<div class="post-attr">
-								<time>{{date format="YYYY年MM月DD日"}}</time>
-								<span class="dotted">•</span>
-								<span>{{reading_time}}</span>
-							</div>
-						</div>
-					</div>
-					<article class="md-preview">
-						{{content}}
-					</article>
-				</div>
-			</div>
-			<nav class="navbar-side hidden">
-				<div class="toc-wrapper">
-					<a class="slide-toc-btn">
-						<span>目录</span>
-						<span></span>
-					</a>
-					<div id="toc"></div>
-				</div>
-			</nav>
-		</div>
-		<div class="post-footer">
-			{{> post-author}}
-			{{> prev-next}}
-		</div>
-		<a id="back_to_top" href="#"></a>
-	</div>
-	{{> footer}}
-	{{> copyright}}
-{{/post}}
+{{!-- <header style="background-image: url({{#if feature_image}}{{feature_image}}{{else}}{{@site.cover_image}}{{/if}})" --}}
+    <header style="background-image: url({{#if
+            primary_tag.feature_image}}{{primary_tag.feature_image}}{{else}}{{@site.cover_image}}{{/if}})"
 
+            class="post-header">
+        <div class="post-header-container">
+            <div class="post-nav">
+                <a href="{{@site.url}}">首页</a>
+            </div>
+            <div class="post-tags">{{tags separator=""}}</div>
+        </div>
+    </header>
+    <div class="site-content">
+        <div class="article-wrapper">
+            <div class="article-left">
+                <div class="article-content">
+                    <div class="post-title">{{title}}</div>
+                    <div class="post-author">
+                        <div class="author-avatar">
+                            {{#if primary_author.profile_image}}
+                                <img src="{{img_url primary_author.profile_image}}" alt="{{@site.title}}"/>
+                            {{else}}
+                                <img src="{{asset "img/user-image.png"}}" alt="{{@site.title}}"/>
+                            {{/if}}
+                        </div>
+                        <div class="author-content">
+                            <div class="author-name">{{primary_author.name}}</div>
+                            <div class="post-attr">
+                                <time>{{date format="YYYY年MM月DD日"}}</time>
+                                <span class="dotted">•</span>
+                                <span>{{reading_time}}</span>
+                                <span class="dotted">•</span>
+                                阅读量:<span class="waline-pageview-count" data-path="{{url}}"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="md-preview">
+                        {{content}}
+                    </article>
+                </div>
+            </div>
+            <nav class="navbar-side hidden">
+                <div class="toc-wrapper">
+                    <a class="slide-toc-btn">
+                        <span>目录</span>
+                        <span></span>
+                    </a>
+                    <div id="toc"></div>
+                </div>
+            </nav>
+        </div>
+        <div class="post-footer">
+            {{> post-author}}
+            {{> comments}}
+            {{> prev-next}}
+        </div>
+
+        <a id="back_to_top" href="#"></a>
+    </div>
+    {{> footer}}
+{{/post}}
+{{> copyright}}
 <div id="show_image_layer" class="hidden"></div>
 <div id="img_wrapper" class="hidden">
-	<img src="" alt="">
+    <img src="" alt="">
 </div>
