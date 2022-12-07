@@ -2,13 +2,15 @@
     <div class="col-md-10">
         <!-- Waline -->
         <div id="vcomments"></div>
+        <script src="/assets/js/waline.js"></script>
+        <link rel="stylesheet" href="/assets/css/waline.css"/>
         <script>
             Waline.init({
                 el: '#vcomments',
                 pageview: true,
-                copyright: false,
+                copyright: typeof WalineCopyright !== 'undefined' ? WalineCopyright : false,
                 serverURL: WalineServerURL,
-                requiredMeta: WalineRequiredMeta
+                requiredMeta: typeof WalineRequiredMeta !== 'undefined' ? WalineRequiredMeta : []
             })
         </script>
     </div>

@@ -4,23 +4,15 @@
             <div class="post-author">
                 <figure class="author-image">
                     {{#if profile_image}}
-                        <a href="{{url}}" style="background-image: url({{img_url profile_image}})"></a>
+                        <a href="/about/" style="background-image: url({{img_url profile_image}})"></a>
                     {{else}}
-                        <a href="{{url}}" style="background-image: url({{asset "img/user-image.png"}})"></a>
+                        <a href="/about/" style="background-image: url({{asset "img/user-image.png"}})"></a>
                     {{/if}}
-
                 </figure>
                 <section class="author-info">
                     <h4>
-                        <a href="{{url}}">{{name}}</a>
+                        <a href="/about/">{{name}}</a>
                     </h4>
-                    {{#if bio}}
-                        <p>{{bio}}</p>
-                    {{/if}}
-                    <div class="author-meta">
-                        <a href="{{website}}"><span><i class="fa fa-link"></i>{{website}}</span></a>
-                        <span><i class="fa fa-map-marker"></i>{{location}}</span>
-                    </div>
                 </section>
             </div>
         {{/primary_author}}

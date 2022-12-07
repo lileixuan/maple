@@ -1,0 +1,29 @@
+{{!< default}}
+
+<div class="author-page">
+    <header class="animated fadeIn">
+        <div class="header-top">
+            {{navigation}}
+        </div>
+    </header>
+
+    <div class="author-container">
+        <div class="plane-wrapper">
+            <img src="{{asset 'images/plane.svg'}}" alt="">
+            <div class="rotate-container">
+                <img src="{{asset 'images/propeller.svg'}}" alt="">
+            </div>
+        </div>
+        {{#post}}
+            <div class="about-me-content">
+                {{content}}
+            </div>
+        {{/post}}
+    </div>
+</div>
+
+
+
+
+
+
