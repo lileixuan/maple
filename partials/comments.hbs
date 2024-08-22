@@ -5,12 +5,17 @@
         <script src="/assets/js/waline.js"></script>
         <link rel="stylesheet" href="/assets/css/waline.css"/>
         <script>
+            const locale = {
+                placeholder: '本站已开启人工审核，评论有回复时本站会有邮件提醒。',
+            };
             Waline.init({
                 el: '#vcomments',
                 pageview: true,
                 copyright: typeof WalineCopyright !== 'undefined' ? WalineCopyright : false,
                 serverURL: WalineServerURL,
-                requiredMeta: typeof WalineRequiredMeta !== 'undefined' ? WalineRequiredMeta : []
+                requiredMeta: typeof WalineRequiredMeta !== 'undefined' ? WalineRequiredMeta : [],
+                turnstileKey: typeof WalineTurnstileKey !== 'undefined' ? WalineTurnstileKey : '',
+                locale
             })
         </script>
     </div>
