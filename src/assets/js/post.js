@@ -72,7 +72,7 @@ $(function () {
                 'top': top,
                 'left': left
             });
-            $(this).children('.copy-code-wrapper').tooltip();
+            // $(this).children('.copy-code-wrapper').tooltip();
         }
     }, function () {
         $(this).children('.copy-code-wrapper').remove();
@@ -107,7 +107,8 @@ function copyCode(target) {
     var copy_text = $(target).nextAll('code').text();
     clipboard.copy(copy_text).then(function () {
         $(target).text('已复制');
-        $(target).attr('title', "代码已成功复制").tooltip('fixTitle').tooltip('show');
+        $(target).attr('title', "代码已成功复制");
+        // $(target).attr('title', "代码已成功复制").tooltip('fixTitle').tooltip('show');
     });
 }
 
